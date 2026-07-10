@@ -1,22 +1,10 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
 import { ArrowRight, ArrowUpRight, Check, Activity, ShieldCheck, LayoutGrid, Users, Settings, Database, Server, GitMerge } from 'lucide-react';
-
-const FadeIn = ({ children, delay = 0, className = '' }: { children: React.ReactNode, delay?: number, className?: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 24 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-    className={className}
-  >
-    {children}
-  </motion.div>
-);
-
-const Divider = () => (
-  <div className="w-full h-px bg-white/5 my-24 md:my-32" />
-);
+import { HeroSection } from './components/HeroSection';
+import { ProofTags } from './components/ProofTags';
+import { StatsGrid } from './components/StatsGrid';
+import { FadeIn } from './components/FadeIn';
+import { SectionDivider } from './components/SectionDivider';
 
 export default function App() {
   return (
@@ -39,70 +27,11 @@ export default function App() {
       </nav>
 
       <main className="pt-32 pb-24">
-        {/* 1. Hero */}
-        <section className="max-w-7xl mx-auto px-6 pt-20 md:pt-32 relative">
-          {/* Abstract Grid Background Element */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/10 via-[#0a0a0a]/0 to-transparent pointer-events-none" />
-          
-          <FadeIn>
-            <div className="inline-flex items-center space-x-3 mb-8">
-              <span className="w-8 h-px bg-red-600"></span>
-              <span className="text-xs tracking-[0.2em] text-zinc-300 font-normal uppercase">Enterprise Readiness</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl text-white font-normal leading-[1.1] max-w-4xl tracking-tight">
-              Enterprise readiness,<br />before you have to ask.
-            </h1>
-            <p className="mt-8 text-lg md:text-xl max-w-2xl leading-relaxed text-zinc-400">
-              Before a project begins, enterprise teams are already looking for proof: security, scale, governance, delivery maturity, and the people who will actually do the work.
-            </p>
-            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-white text-black px-8 py-4 font-normal hover:bg-zinc-200 transition-colors flex items-center group">
-                Talk through readiness
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </FadeIn>
-
-          {/* Floating Proof Tags */}
-          <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: 'Security Approved', icon: ShieldCheck },
-              { label: 'Procurement Ready', icon: Settings },
-              { label: 'Scale Tested', icon: Server },
-              { label: 'Governance Aligned', icon: GitMerge }
-            ].map((tag, i) => (
-              <FadeIn key={i} delay={0.2 + (i * 0.1)}>
-                <div className="flex items-center space-x-3 border border-white/10 px-4 py-3 bg-white/[0.02]">
-                  <tag.icon className="w-4 h-4 text-red-500/80" />
-                  <span className="text-sm text-zinc-300">{tag.label}</span>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </section>
-
-        <Divider />
-
-        {/* 2. Readiness Snapshot */}
-        <section className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
-              {[
-                { title: '20+ years', desc: 'Building enterprise technology with long-term client partnerships.' },
-                { title: 'Global delivery', desc: 'Teams structured for distributed stakeholders, time zones, and delivery cycles.' },
-                { title: 'Cross-functional', desc: 'Design, engineering, AI, data, and platform teams working together.' },
-                { title: 'Enterprise platforms', desc: 'Experience across ServiceNow, Salesforce, cloud, data, AI, and custom digital products.' }
-              ].map((item, i) => (
-                <div key={i} className="bg-[#0a0a0a] p-8 md:p-10 flex flex-col justify-between group hover:bg-zinc-900/50 transition-colors">
-                  <h3 className="text-3xl font-normal text-white mb-6">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-zinc-500">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </section>
-
-        <Divider />
+        <HeroSection />
+        <ProofTags />
+        <SectionDivider />
+        <StatsGrid />
+        <SectionDivider />
 
         {/* 3. Enterprise Checks */}
         <section className="max-w-7xl mx-auto px-6">
@@ -157,7 +86,7 @@ export default function App() {
           </div>
         </section>
 
-        <Divider />
+        <SectionDivider />
 
         {/* 4. Decision Point */}
         <section className="max-w-4xl mx-auto px-6 text-center">
@@ -180,7 +109,7 @@ export default function App() {
           </FadeIn>
         </section>
 
-        <Divider />
+        <SectionDivider />
 
         {/* 5. How Readiness Shows Up in Delivery */}
         <section className="max-w-7xl mx-auto px-6">
@@ -208,7 +137,7 @@ export default function App() {
           </div>
         </section>
 
-        <Divider />
+        <SectionDivider />
 
         {/* 6. Depth Across Practices */}
         <section className="max-w-7xl mx-auto px-6">
@@ -240,7 +169,7 @@ export default function App() {
           </div>
         </section>
 
-        <Divider />
+        <SectionDivider />
 
         {/* 7. The People Behind the Work */}
         <section className="max-w-7xl mx-auto px-6">
@@ -274,7 +203,7 @@ export default function App() {
           </div>
         </section>
 
-        <Divider />
+        <SectionDivider />
 
         {/* 8. Proof in Practice */}
         <section className="max-w-7xl mx-auto px-6">
@@ -312,7 +241,7 @@ export default function App() {
           </button>
         </section>
 
-        <Divider />
+        <SectionDivider />
 
         {/* 9. Closing CTA */}
         <section className="max-w-4xl mx-auto px-6 text-center pb-20">
