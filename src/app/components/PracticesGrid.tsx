@@ -1,9 +1,10 @@
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
 import { practices } from "../../data/practices";
 
 export function PracticesGrid() {
   return (
-    <section className="max-w-7xl mx-auto px-6">
+    <SectionContainer>
       <FadeIn>
         <h2 className="text-3xl md:text-5xl font-normal text-white mb-16">
           Different practices.<br />One delivery rhythm.
@@ -25,6 +26,6 @@ export function PracticesGrid() {
           </FadeIn>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }

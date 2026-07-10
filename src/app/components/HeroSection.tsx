@@ -1,10 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
+import { Button } from "./ui/button";
 import { heroContent } from "../../data/hero";
 
 export function HeroSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 pt-20 md:pt-32 relative">
+    <SectionContainer className="pt-20 md:pt-32 relative">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/10 via-[#0a0a0a]/0 to-transparent pointer-events-none" />
 
       <FadeIn>
@@ -21,12 +23,12 @@ export function HeroSection() {
           {heroContent.description}
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <button className="bg-white text-black px-8 py-4 font-normal hover:bg-zinc-200 transition-colors flex items-center group">
+          <Button className="bg-white text-black hover:bg-zinc-200" variant="outline">
             {heroContent.buttonText}
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
         </div>
       </FadeIn>
-    </section>
+    </SectionContainer>
   );
 }

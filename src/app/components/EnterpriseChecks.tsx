@@ -1,9 +1,10 @@
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
 import { enterpriseChecks } from "../../data/checks";
 
 export function EnterpriseChecks() {
   return (
-    <section className="max-w-7xl mx-auto px-6">
+    <SectionContainer>
       <FadeIn>
         <h2 className="text-3xl md:text-5xl font-normal text-white mb-16 max-w-2xl">
           The checks that happen before the first workshop.
@@ -26,6 +27,6 @@ export function EnterpriseChecks() {
           </FadeIn>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }

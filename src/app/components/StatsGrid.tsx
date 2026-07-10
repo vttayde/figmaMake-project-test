@@ -1,9 +1,10 @@
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
 import { readinessStats } from "../../data/stats";
 
 export function StatsGrid() {
   return (
-    <section className="max-w-7xl mx-auto px-6">
+    <SectionContainer>
       <FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
           {readinessStats.map((item) => (
@@ -17,6 +18,6 @@ export function StatsGrid() {
           ))}
         </div>
       </FadeIn>
-    </section>
+    </SectionContainer>
   );
 }

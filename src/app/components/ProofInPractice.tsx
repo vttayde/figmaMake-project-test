@@ -1,18 +1,20 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
+import { Button } from "./ui/button";
 import { proofCases } from "../../data/proofCases";
 
 export function ProofInPractice() {
   return (
-    <section className="max-w-7xl mx-auto px-6">
+    <SectionContainer>
       <FadeIn>
         <div className="flex justify-between items-end mb-16">
           <h2 className="text-3xl md:text-5xl font-normal text-white max-w-xl">
             Where readiness has already shown up.
           </h2>
-          <button className="hidden md:flex items-center text-sm font-normal text-white hover:text-red-400 transition-colors">
+          <Button className="hidden md:inline-flex items-center text-sm text-white hover:text-red-400 transition-colors" variant="ghost">
             View related work <ArrowUpRight className="ml-1 w-4 h-4" />
-          </button>
+          </Button>
         </div>
       </FadeIn>
 
@@ -30,9 +32,9 @@ export function ProofInPractice() {
         ))}
       </div>
 
-      <button className="md:hidden mt-8 flex items-center text-sm font-normal text-white border-b border-white/30 pb-1 w-fit">
+      <Button className="md:hidden mt-8 text-sm text-white border-b border-white/30 pb-1 w-fit hover:bg-white/5" variant="ghost">
         View related work <ArrowUpRight className="ml-1 w-4 h-4" />
-      </button>
-    </section>
+      </Button>
+    </SectionContainer>
   );
 }

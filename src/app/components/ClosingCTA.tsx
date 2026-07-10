@@ -1,8 +1,10 @@
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
+import { Button } from "./ui/button";
 
 export function ClosingCTA() {
   return (
-    <section className="max-w-4xl mx-auto px-6 text-center pb-20">
+    <SectionContainer className="text-center pb-20" narrow>
       <FadeIn>
         <h2 className="text-4xl md:text-6xl font-normal text-white mb-8">
           Ready before the first workshop.
@@ -11,14 +13,14 @@ export function ClosingCTA() {
           If readiness is part of your decision, we can walk through the proof, process, and the people behind the work.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <button className="bg-white text-black px-8 py-4 font-normal hover:bg-zinc-200 transition-colors">
+          <Button className="bg-white text-black hover:bg-zinc-200" variant="outline">
             Talk through readiness
-          </button>
-          <button className="text-white border border-white/20 px-8 py-4 font-normal hover:bg-white/5 transition-colors">
+          </Button>
+          <Button className="text-white border border-white/20 hover:bg-white/5" variant="ghost">
             Explore our work
-          </button>
+          </Button>
         </div>
       </FadeIn>
-    </section>
+    </SectionContainer>
   );
 }

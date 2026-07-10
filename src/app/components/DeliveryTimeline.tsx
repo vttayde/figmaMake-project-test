@@ -1,9 +1,10 @@
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
 import { deliverySteps } from "../../data/deliverySteps";
 
 export function DeliveryTimeline() {
   return (
-    <section className="max-w-7xl mx-auto px-6">
+    <SectionContainer>
       <FadeIn>
         <h2 className="text-3xl md:text-5xl font-normal text-white mb-20 max-w-2xl">
           Readiness is not a document. It shows up in delivery.
@@ -22,6 +23,6 @@ export function DeliveryTimeline() {
           </FadeIn>
         ))}
       </div>
-    </section>
+    </SectionContainer>
   );
 }

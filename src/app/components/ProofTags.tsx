@@ -1,9 +1,10 @@
 import { FadeIn } from "./FadeIn";
+import { SectionContainer } from "./SectionContainer";
 import { proofTags } from "../../data/proofTags";
 
 export function ProofTags() {
   return (
-    <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <SectionContainer className="mt-24">
       {proofTags.map((tag, i) => {
         const Icon = tag.icon;
         return (
@@ -15,6 +16,6 @@ export function ProofTags() {
           </FadeIn>
         );
       })}
-    </div>
+    </SectionContainer>
   );
 }
