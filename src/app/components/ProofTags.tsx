@@ -4,7 +4,7 @@ import { proofTags } from "../../data/proofTags";
 
 export function ProofTags() {
   return (
-    <SectionContainer className="mt-24">
+    <SectionContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-24">
       {proofTags.map((tag, i) => {
         const Icon = tag.icon;
         return (
