@@ -5,6 +5,7 @@ import { StatsGrid } from './components/StatsGrid';
 import { EnterpriseChecks } from './components/EnterpriseChecks';
 import { DecisionSection } from './components/DecisionSection';
 import { DeliveryTimeline } from './components/DeliveryTimeline';
+import { PracticesGrid } from './components/PracticesGrid';
 import { FadeIn } from './components/FadeIn';
 import { SectionDivider } from './components/SectionDivider';
 
@@ -40,37 +41,7 @@ export default function App() {
         <SectionDivider />
         <DeliveryTimeline />
         <SectionDivider />
-
-        {/* 6. Depth Across Practices */}
-        <section className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-normal text-white mb-16">
-              Different practices.<br />One delivery rhythm.
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-            {[
-              { title: 'Design & Experience', desc: 'Research, UX, visual systems, product thinking, and experience transformation.' },
-              { title: 'AI & Automation', desc: 'AI-assisted workflows, internal tools, copilots, automation, and operational intelligence.' },
-              { title: 'Enterprise Platforms', desc: 'ServiceNow, Salesforce, portals, workflows, integrations, and platform modernization.' },
-              { title: 'Engineering & Cloud', desc: 'Custom development, scalable architecture, cloud systems, APIs, and delivery execution.' }
-            ].map((practice, i) => (
-              <FadeIn key={i} className="bg-[#0a0a0a] p-10 md:p-16 relative group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <h3 className="text-2xl font-normal text-white mb-4 relative z-10">{practice.title}</h3>
-                <p className="text-zinc-400 leading-relaxed max-w-sm relative z-10">{practice.desc}</p>
-                {/* Abstract line visuals */}
-                <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-30 transition-opacity duration-700">
-                  <svg viewBox="0 0 100 100" className="w-full h-full stroke-white fill-none stroke-[0.5]">
-                    <path d="M0,50 L100,50 M50,0 L50,100 M25,25 L75,75 M25,75 L75,25" />
-                  </svg>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </section>
-
+        <PracticesGrid />
         <SectionDivider />
 
         {/* 7. The People Behind the Work */}
