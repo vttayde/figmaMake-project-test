@@ -1,4 +1,3 @@
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { HeroSection } from './components/HeroSection';
 import { ProofTags } from './components/ProofTags';
 import { StatsGrid } from './components/StatsGrid';
@@ -7,7 +6,8 @@ import { DecisionSection } from './components/DecisionSection';
 import { DeliveryTimeline } from './components/DeliveryTimeline';
 import { PracticesGrid } from './components/PracticesGrid';
 import { TeamSection } from './components/TeamSection';
-import { FadeIn } from './components/FadeIn';
+import { ProofInPractice } from './components/ProofInPractice';
+import { ClosingCTA } from './components/ClosingCTA';
 import { SectionDivider } from './components/SectionDivider';
 
 export default function App() {
@@ -46,64 +46,9 @@ export default function App() {
         <SectionDivider />
         <TeamSection />
         <SectionDivider />
-
-        {/* 8. Proof in Practice */}
-        <section className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <div className="flex justify-between items-end mb-16">
-              <h2 className="text-3xl md:text-5xl font-normal text-white max-w-xl">
-                Where readiness has already shown up.
-              </h2>
-              <button className="hidden md:flex items-center text-sm font-normal text-white hover:text-red-400 transition-colors">
-                View related work <ArrowUpRight className="ml-1 w-4 h-4" />
-              </button>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { title: 'ServiceNow transformation', desc: 'Improved employee self-service, reduced support dependency, and modernized the HRSD experience.' },
-              { title: 'AI workplace tools', desc: 'Designed internal AI workflows to improve speed, clarity, and decision support.' },
-              { title: 'Enterprise product modernization', desc: 'Reworked legacy platforms into clearer, more scalable digital experiences.' }
-            ].map((caseStudy, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="group block border border-white/10 bg-[#0a0a0a] p-8 hover:bg-white/[0.03] transition-colors cursor-pointer h-full flex flex-col">
-                  <h3 className="text-xl font-normal text-white mb-4 group-hover:text-red-400 transition-colors">{caseStudy.title}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-8 flex-grow">{caseStudy.desc}</p>
-                  <div className="flex items-center text-xs text-white uppercase tracking-wider font-normal mt-auto opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
-                    Explore <ArrowRight className="ml-2 w-3 h-3" />
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          
-          <button className="md:hidden mt-8 flex items-center text-sm font-normal text-white border-b border-white/30 pb-1 w-fit">
-            View related work <ArrowUpRight className="ml-1 w-4 h-4" />
-          </button>
-        </section>
-
+        <ProofInPractice />
         <SectionDivider />
-
-        {/* 9. Closing CTA */}
-        <section className="max-w-4xl mx-auto px-6 text-center pb-20">
-          <FadeIn>
-            <h2 className="text-4xl md:text-6xl font-normal text-white mb-8">
-              Ready before the first workshop.
-            </h2>
-            <p className="text-lg text-zinc-400 mb-12 max-w-2xl mx-auto">
-              If readiness is part of your decision, we can walk through the proof, process, and the people behind the work.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-white text-black px-8 py-4 font-normal hover:bg-zinc-200 transition-colors">
-                Talk through readiness
-              </button>
-              <button className="text-white border border-white/20 px-8 py-4 font-normal hover:bg-white/5 transition-colors">
-                Explore our work
-              </button>
-            </div>
-          </FadeIn>
-        </section>
+        <ClosingCTA />
       </main>
 
       <style dangerouslySetInnerHTML={{__html: `
