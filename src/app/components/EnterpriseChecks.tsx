@@ -1,3 +1,4 @@
+import { SectionHeading } from "./SectionHeading";
 import { FadeIn } from "./FadeIn";
 import { SectionContainer } from "./SectionContainer";
 import { enterpriseChecks } from "../../data/checks";
@@ -5,11 +6,7 @@ import { enterpriseChecks } from "../../data/checks";
 export function EnterpriseChecks() {
   return (
     <SectionContainer>
-      <FadeIn>
-        <h2 className="text-3xl md:text-5xl font-normal text-white mb-16 max-w-2xl">
-          The checks that happen before the first workshop.
-        </h2>
-      </FadeIn>
+      <SectionHeading title="The checks that happen before the first workshop." />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {enterpriseChecks.map((check, i) => (

@@ -1,3 +1,4 @@
+import { SectionHeading } from "./SectionHeading";
 import { FadeIn } from "./FadeIn";
 import { SectionContainer } from "./SectionContainer";
 import { practices } from "../../data/practices";
@@ -5,11 +6,10 @@ import { practices } from "../../data/practices";
 export function PracticesGrid() {
   return (
     <SectionContainer>
-      <FadeIn>
-        <h2 className="text-3xl md:text-5xl font-normal text-white mb-16">
-          Different practices.<br />One delivery rhythm.
-        </h2>
-      </FadeIn>
+      <SectionHeading
+        title={"Different practices.\nOne delivery rhythm."}
+        titleClassName="mb-16"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
         {practices.map((practice, i) => (

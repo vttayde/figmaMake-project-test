@@ -1,3 +1,4 @@
+import { SectionHeading } from "./SectionHeading";
 import { FadeIn } from "./FadeIn";
 import { SectionContainer } from "./SectionContainer";
 import { teamMembers } from "../../data/team";
@@ -5,14 +6,10 @@ import { teamMembers } from "../../data/team";
 export function TeamSection() {
   return (
     <SectionContainer>
-      <FadeIn>
-        <h2 className="text-3xl md:text-5xl font-normal text-white mb-6 max-w-2xl">
-          The team you meet is the team that stays close.
-        </h2>
-        <p className="text-lg text-zinc-400 max-w-2xl mb-16">
-          Enterprise work needs continuity. Strategy, design, engineering, and delivery stay connected from the first conversation to handoff.
-        </p>
-      </FadeIn>
+      <SectionHeading
+        title="The team you meet is the team that stays close."
+        description="Enterprise work needs continuity. Strategy, design, engineering, and delivery stay connected from the first conversation to handoff."
+      />
 
       <div className="flex overflow-x-auto pb-8 hide-scrollbar space-x-6 snap-x">
         {teamMembers.map((person, i) => (

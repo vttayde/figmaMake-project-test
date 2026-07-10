@@ -1,4 +1,5 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { SectionHeading } from "./SectionHeading";
 import { FadeIn } from "./FadeIn";
 import { SectionContainer } from "./SectionContainer";
 import { Button } from "./ui/button";
@@ -7,16 +8,13 @@ import { proofCases } from "../../data/proofCases";
 export function ProofInPractice() {
   return (
     <SectionContainer>
-      <FadeIn>
-        <div className="flex justify-between items-end mb-16">
-          <h2 className="text-3xl md:text-5xl font-normal text-white max-w-xl">
-            Where readiness has already shown up.
-          </h2>
-          <Button className="hidden md:inline-flex items-center text-sm text-white hover:text-red-400 transition-colors" variant="ghost">
-            View related work <ArrowUpRight className="ml-1 w-4 h-4" />
-          </Button>
-        </div>
-      </FadeIn>
+      <SectionHeading
+        title="Where readiness has already shown up."
+        className="mb-16"
+      />
+      <Button className="hidden md:inline-flex items-center text-sm text-white hover:text-red-400 transition-colors" variant="ghost">
+        View related work <ArrowUpRight className="ml-1 w-4 h-4" />
+      </Button>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {proofCases.map((caseStudy, i) => (

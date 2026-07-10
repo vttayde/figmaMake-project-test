@@ -1,3 +1,4 @@
+import { SectionHeading } from "./SectionHeading";
 import { FadeIn } from "./FadeIn";
 import { SectionContainer } from "./SectionContainer";
 import { deliverySteps } from "../../data/deliverySteps";
@@ -5,11 +6,10 @@ import { deliverySteps } from "../../data/deliverySteps";
 export function DeliveryTimeline() {
   return (
     <SectionContainer>
-      <FadeIn>
-        <h2 className="text-3xl md:text-5xl font-normal text-white mb-20 max-w-2xl">
-          Readiness is not a document. It shows up in delivery.
-        </h2>
-      </FadeIn>
+      <SectionHeading
+        title="Readiness is not a document. It shows up in delivery."
+        titleClassName="mb-20"
+      />
 
       <div className="relative border-l border-white/10 ml-4 md:ml-8 space-y-20 pb-8">
         {deliverySteps.map((step, i) => (
